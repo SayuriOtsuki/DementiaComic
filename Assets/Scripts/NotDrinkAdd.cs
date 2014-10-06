@@ -10,20 +10,30 @@ public class NotDrinkAdd : MonoBehaviour {
 	public GameObject coma8;
 	public GameObject coma9;
 	public GameObject coma10;
+	public float cameraZ;
+
 	GameObject MainCam;
-	public float cameraZ = -20.99f;
+	GameObject coma4;
+
 
 	void Start () {
 
+		cameraZ = this.transform.position.z;
+
 		MainCam = GameObject.Find ("MainCamera");
+
+		coma4 = GameObject.Find ("1_NotDrink_4");
+
+
 		comaNun = 4;
+
+
 		
 	}
 
 	private void Update()
 	{
-		if (Input.GetKeyUp(KeyCode.Space))
-		{
+		if (Input.GetKeyUp(KeyCode.Space)){
 			comaNun++;
 
 			Debug.Log(comaNun);
@@ -42,41 +52,36 @@ public class NotDrinkAdd : MonoBehaviour {
 			}
 			if(comaNun == 8){
 				Instantiate(coma8);
-				transform.position = new Vector3(0, -28.841f, cameraZ);
+				transform.position = new Vector3(0, -28.99387f, cameraZ);
 			}
 			if(comaNun == 9){
 				Instantiate(coma9);
-				transform.position = new Vector3(0, -32.127f, cameraZ);
+				transform.position = new Vector3(0, -34.41108f, cameraZ);
 			}
 			if(comaNun == 10){
 				Instantiate(coma10);
-				transform.position = new Vector3(0, -37.907f, cameraZ);
+				transform.position = new Vector3(0, -39.82828f, cameraZ);
 			}
 
 		}
-	}
 
-	//int comaNun;
-	/*public GameObject prefab;
 
-	// Use this for initialization
-	void Start () {
-	 
-		//comaNun = 4;
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	/*void comaAdd(){
+
+		if (Input.GetKeyUp(KeyCode.Space)){
+		
+			Vector3 screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+			Vector3 newVector = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+
+			Vector2 tapPoint = new Vector2(newVector.x, newVector.y);
+			Collider2D collision2d = Physics2D.OverlapPoint(tapPoint);
 
 
-		if (Input.GetKey(KeyCode.Space))
-		{
-			//comaNun = comaNun++;
-			//if(comaNun == 5){
-			Instantiate (prefab, Vector3(0, -20.8, 0), Quaternion.identity);
-			//}
 		}
-
 	}*/
+
+
 }

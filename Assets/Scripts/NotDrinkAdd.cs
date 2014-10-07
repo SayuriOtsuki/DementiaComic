@@ -3,7 +3,7 @@ using System.Collections;
 
 public class NotDrinkAdd : MonoBehaviour {
 
-	int comaNun;
+	float comaNum;
 	public GameObject coma5;
 	public GameObject coma6;
 	public GameObject coma7;
@@ -11,6 +11,10 @@ public class NotDrinkAdd : MonoBehaviour {
 	public GameObject coma9;
 	public GameObject coma10;
 	public float cameraZ;
+	public float comaGoUnder = -14f;
+
+	public int maxComa = 10;
+	public float comaDif = -5.0f;
 
 	GameObject MainCam;
 	GameObject coma4;
@@ -24,46 +28,89 @@ public class NotDrinkAdd : MonoBehaviour {
 
 		coma4 = GameObject.Find ("1_NotDrink_4");
 
+		comaNum = -1;
 
-		comaNun = 4;
-
-
-		
+	
 	}
 
 	private void Update()
 	{
 		if (Input.GetKeyUp(KeyCode.Space)){
-			comaNun++;
+			comaNum = comaNum + 1;
+			float comaMove = comaDif*comaNum;
 
-			Debug.Log(comaNun);
-
-			if(comaNun == 5){
+			if(comaNum == 0){
 				Instantiate(coma5);
-				transform.position = new Vector3(0, -14, cameraZ);
+				transform.position = new Vector3(0, comaGoUnder+comaMove, cameraZ);
+				Debug.Log(comaNum);
 			}
-			if(comaNun == 6){
+			if(comaNum == 1){
 				Instantiate(coma6);
-				transform.position = new Vector3(0, -18.394f, cameraZ);
+				transform.position = new Vector3(0, comaGoUnder+comaMove, cameraZ);
+				Debug.Log(comaNum);
 			}
-			if(comaNun == 7){
+			if(comaNum == 2){
 				Instantiate(coma7);
-				transform.position = new Vector3(0, -24.648f, cameraZ);
+				transform.position = new Vector3(0, comaGoUnder+comaMove, cameraZ);
+				Debug.Log(comaNum);
 			}
-			if(comaNun == 8){
+			if(comaNum == 3){
 				Instantiate(coma8);
-				transform.position = new Vector3(0, -28.99387f, cameraZ);
+				transform.position = new Vector3(0, comaGoUnder+comaMove, cameraZ);
+				Debug.Log(comaNum);
 			}
-			if(comaNun == 9){
+			if(comaNum == 4){
 				Instantiate(coma9);
-				transform.position = new Vector3(0, -34.41108f, cameraZ);
+				transform.position = new Vector3(0, comaGoUnder+comaMove, cameraZ);
+				Debug.Log(comaNum);
 			}
-			if(comaNun == 10){
+			if(comaNum == 5){
 				Instantiate(coma10);
-				transform.position = new Vector3(0, -39.82828f, cameraZ);
+				transform.position = new Vector3(0, comaGoUnder+comaMove, cameraZ);
+				Debug.Log(comaNum);
 			}
+
 
 		}
+
+		if (Input.touchCount >= 1){
+
+			comaNum = comaNum + 1;
+			float comaMove = comaDif*comaNum;
+			
+			if(comaNum == 0){
+				Instantiate(coma5);
+				transform.position = new Vector3(0, comaGoUnder+comaMove, cameraZ);
+				Debug.Log(comaNum);
+			}
+			if(comaNum == 1){
+				Instantiate(coma6);
+				transform.position = new Vector3(0, comaGoUnder+comaMove, cameraZ);
+				Debug.Log(comaNum);
+			}
+			if(comaNum == 2){
+				Instantiate(coma7);
+				transform.position = new Vector3(0, comaGoUnder+comaMove, cameraZ);
+				Debug.Log(comaNum);
+			}
+			if(comaNum == 3){
+				Instantiate(coma8);
+				transform.position = new Vector3(0, comaGoUnder+comaMove, cameraZ);
+				Debug.Log(comaNum);
+			}
+			if(comaNum == 4){
+				Instantiate(coma9);
+				transform.position = new Vector3(0, comaGoUnder+comaMove, cameraZ);
+				Debug.Log(comaNum);
+			}
+			if(comaNum == 5){
+				Instantiate(coma10);
+				transform.position = new Vector3(0, comaGoUnder+comaMove, cameraZ);
+				Debug.Log(comaNum);
+			}
+			
+		}
+
 
 
 

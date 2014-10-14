@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\NotDrinkAdd.cs" />
      <Compile Include="Assets\Scripts\NotDrinkAdd2.cs" />
      <Compile Include="Assets\Scripts\cameraMove.cs" />
+     <Compile Include="Assets\Scripts\camera_pinch.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -37,6 +37,7 @@
 -define:UNITY_EDITOR_OSX
 'Assets/Scripts/NotDrinkAdd.cs'
 'Assets/Scripts/NotDrinkAdd2.cs'
+'Assets/Scripts/TouchTest.cs'
 'Assets/Scripts/cameraMove.cs'
 'Assets/Scripts/camera_pinch.cs'
 -r:'/Applications/Unity4.5/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'

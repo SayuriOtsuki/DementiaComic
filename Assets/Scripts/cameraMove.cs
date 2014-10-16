@@ -16,8 +16,8 @@ public class cameraMove : MonoBehaviour {
 	void Update () {
 
 
-		Vector3 cameraPos = transform.position;
-		cameraPos.y = Mathf.Clamp (cameraPos.y, -8.0f, -47.40752f);
+		//Vector3 cameraPos = transform.position;
+		//cameraPos.y = Mathf.Clamp (cameraPos.y, -8.0f, -47.40752f);
 
 		//transform.position.y = Mathf.Clamp (transform.position.y, -4, 4);
 		//transform.position.x = Mathf.Clamp(transform.position.x,-10,10);
@@ -40,8 +40,9 @@ public class cameraMove : MonoBehaviour {
 					Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 					transform.Translate(-touchDeltaPosition.x * moveSpeed, -touchDeltaPosition.y * moveSpeed, 0);
 					
-					float limit_value = Mathf.Clamp (transform.position.y, -47.40752f, -8.0f);
-					transform.position = new Vector3 (transform.position.x, limit_value, transform.position.z);
+					float limit_valueY = Mathf.Clamp (transform.position.y, -45.0f, -2.0f);
+					float limit_valueX = Mathf.Clamp (transform.position.x, -2.7f, 3.0f);
+					transform.position = new Vector3 (limit_valueX, limit_valueY, transform.position.z);
 			}
 			//}
 

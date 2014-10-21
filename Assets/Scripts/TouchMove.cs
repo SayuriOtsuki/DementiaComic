@@ -16,7 +16,7 @@ public class TouchMove : MonoBehaviour {
 			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 			transform.Translate(-touchDeltaPosition.x * moveSpeed, -touchDeltaPosition.y * moveSpeed, 0);
 			
-			float limit_valueY = Mathf.Clamp (transform.position.y,  0.0f, 20.0f);
+			float limit_valueY = Mathf.Clamp (transform.position.y,  0.0f, 21.5f);
 			//float limit_valueX = Mathf.Clamp (transform.position.x, -2.7f, 3.0f);
 			transform.position = new Vector3 (0, limit_valueY, transform.position.z);
 			

@@ -37,6 +37,7 @@
 -define:UNITY_EDITOR_OSX
 'Assets/Scripts/NotDrinkAdd.cs'
 'Assets/Scripts/NotDrinkAdd2.cs'
+'Assets/Scripts/SelectByTouch.cs'
 'Assets/Scripts/TouchMove.cs'
 'Assets/Scripts/TouchTest.cs'
 'Assets/Scripts/cameraMove.cs'

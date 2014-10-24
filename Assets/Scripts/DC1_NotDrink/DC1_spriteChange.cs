@@ -12,9 +12,7 @@ public class DC1_spriteChange : MonoBehaviour {
 	
 		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+	/*void Update () {
 		if (Input.touchCount == 1) {
 			Vector2 tapPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			Collider2D collition2d  = Physics2D.OverlapPoint(tapPoint);
@@ -32,5 +30,14 @@ public class DC1_spriteChange : MonoBehaviour {
 				}
 			}
 		}
+	}*/
+
+	// Update is called once per frame
+	public void SpriteChange() {
+		Debug.Log ("SpriteChange");
+						//spriteRenderer.sprite = Resources.Load<Sprite>("1_NotDrink/DC1_04");
+						//spriteRenderer.sprite = testSprite;
+						//Debug.Log("spriteRenderer is" + spriteRenderer.sprite.name);
+
 	}
 }

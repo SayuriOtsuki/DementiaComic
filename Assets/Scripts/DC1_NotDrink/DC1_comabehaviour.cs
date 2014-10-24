@@ -4,6 +4,7 @@ using System.Collections;
 public class DC1_comabehaviour : MonoBehaviour {
 	public float moveSpeed = 0.08f;
 	public GameObject comaFirst;
+
 	public float comaDif = 7.0f;
 
 	float comaMove;
@@ -11,6 +12,7 @@ public class DC1_comabehaviour : MonoBehaviour {
 	float comaFirstY;
 	float comaFirstZ;
 
+	DC1_spriteChange dc1SC;
 
 	// Use this for initialization
 	void Start () {
@@ -60,6 +62,23 @@ public class DC1_comabehaviour : MonoBehaviour {
 			}
 
 
+		}
+
+		if (Input.touchCount == 1) {
+			Vector2 tapPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			Collider2D collition2d  = Physics2D.OverlapPoint(tapPoint);
+			
+			if (collition2d) {
+				RaycastHit2D hitObject = Physics2D.Raycast(tapPoint,-Vector2.up);
+				
+				if (hitObject) {
+					Debug.Log("hit object is " + hitObject.collider.gameObject.name);
+					if(hitObject.collider.gameObject.name == "4komaTest_66_3"){
+						Debug.Log ("Hit");
+						dc1SC.SpriteChange();
+					}
+				}
+			}
 		}
 	}
 }

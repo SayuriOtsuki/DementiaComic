@@ -3,12 +3,14 @@ using System.Collections;
 
 public class DC1_spriteChange : MonoBehaviour {
 
-	public GameObject coma3;
-	public SpriteRenderer spriteRenderer;
+
+	private SpriteRenderer spriteRenderer; 
+	public Sprite testSprite;
+
 	// Use this for initialization
 	void Start () {
 	
-		spriteRenderer = coma3.GetComponent<SpriteRenderer>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
@@ -23,8 +25,9 @@ public class DC1_spriteChange : MonoBehaviour {
 				if (hitObject) {
 					Debug.Log("hit object is " + hitObject.collider.gameObject.name);
 					if(hitObject.collider.gameObject.name == "4komaTest_66_3"){
-						Debug.Log("Hit");
-						spriteRenderer.sprite = Resources.Load<Sprite>("DC1_04");
+						spriteRenderer.sprite = Resources.Load<Sprite>("1_NotDrink/DC1_04");
+						//spriteRenderer.sprite = testSprite;
+						//Debug.Log("spriteRenderer is" + spriteRenderer.sprite.name);
 					}
 				}
 			}

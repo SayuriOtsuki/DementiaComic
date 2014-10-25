@@ -6,7 +6,7 @@ public class ClearButton : MonoBehaviour {
 
 	void OnGUI()
 	{
-		if (GUI.Button(new Rect(70, 660, 300, 50), "Clear Scene"))
+		if (GUI.Button(new Rect(70, 700, 300, 50), "Clear Scene"))
 		{
 			Clear();
 		}

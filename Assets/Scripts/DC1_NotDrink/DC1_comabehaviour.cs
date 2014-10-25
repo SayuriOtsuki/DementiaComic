@@ -4,8 +4,8 @@ using System.Collections;
 public class DC1_comabehaviour : MonoBehaviour {
 	public float moveSpeed = 0.08f;
 	public GameObject comaFirst;
-	public GameObject bunkiMaru;
 	public float comaDif = 7.0f;
+	public float bunkiDif = 1.55f;
 	public Sprite coma3Sprite;
 	private SpriteRenderer spriteRenderer;
 
@@ -15,7 +15,13 @@ public class DC1_comabehaviour : MonoBehaviour {
 	float comaFirstY;
 	float comaFirstZ;
 
+	float bunkiPos;
+	float bunkiMaruX;
+	float bunkiMaruY;
+
+
 	GameObject comaInta;
+	GameObject bunkiMaru;
 	DC1_spriteChange dc1SC;
 
 	
@@ -24,12 +30,17 @@ public class DC1_comabehaviour : MonoBehaviour {
 		comaInta = GameObject.Find ("4komaTest_66_3");
 		spriteRenderer = comaInta.GetComponent<SpriteRenderer>();
 
+		bunkiMaru = GameObject.Find ("4koma_bMaru");
+
 		dc1SC = comaInta.GetComponent<DC1_spriteChange> ();
 
-		//bunkiMaru
 		comaFirstX = comaFirst.transform.position.x;
 		comaFirstY = comaFirst.transform.position.y;
 		comaFirstZ = comaFirst.transform.position.z;
+
+		bunkiMaruX = bunkiMaru.transform.position.x;
+		bunkiMaruY = bunkiMaru.transform.position.y;
+
 	}
 
 	void Update () {
@@ -62,15 +73,20 @@ public class DC1_comabehaviour : MonoBehaviour {
 		//ぴたっと止める
 		if(Input.touchCount  ==1 && Input.GetTouch (0).phase == TouchPhase.Ended){
 
+			//1
 			if(comaFirst.transform.position.y < 5.0f){
 				comaNum = 2;
 				if(spriteRenderer.sprite != coma3Sprite){
 					spriteRenderer.sprite = Resources.Load<Sprite>("1_NotDrink/DC1_03");
 				}
 				comaPos = comaDif*0 + comaFirstY;
-				comaFirst.transform.position = new Vector3(comaFirstX, comaPos, comaFirstZ);	
-			}
+				comaFirst.transform.position = new Vector3(comaFirstX, comaPos, comaFirstZ);
 
+				bunkiPos = bunkiDif*0 + bunkiMaruX;
+				bunkiMaru.transform.position = new Vector3(bunkiPos, bunkiMaruY, 0);
+				}
+
+			//2
 			if(comaFirst.transform.position.y >= 5.0f && comaFirst.transform.position.y  < 11.3f){
 				comaNum = 2;
 				if(spriteRenderer.sprite != coma3Sprite){
@@ -78,16 +94,27 @@ public class DC1_comabehaviour : MonoBehaviour {
 				}
 				comaPos = comaDif*1 + comaFirstY;
 				comaFirst.transform.position = new Vector3(comaFirstX, comaPos, comaFirstZ);
+
+				bunkiPos = bunkiDif*1 + bunkiMaruX;
+				bunkiMaru.transform.position = new Vector3(bunkiPos, bunkiMaruY, 0);
 			}
 
+			//3
 			if(comaFirst.transform.position.y >= 11.3f && comaFirst.transform.position.y < 19.8f){
 				comaPos = comaDif*2 + comaFirstY;
 				comaFirst.transform.position = new Vector3(comaFirstX, comaPos, comaFirstZ);
+
+				bunkiPos = bunkiDif*2 + bunkiMaruX;
+				bunkiMaru.transform.position = new Vector3(bunkiPos, bunkiMaruY, 0);
 			}
 
+			//4
 			if(comaFirst.transform.position.y >= 19.8f){
 				comaPos = comaDif*3 + comaFirstY;
 				comaFirst.transform.position = new Vector3(comaFirstX, comaPos, comaFirstZ);
+
+				bunkiPos = bunkiDif*3 + bunkiMaruX;
+				bunkiMaru.transform.position = new Vector3(bunkiPos, bunkiMaruY, 0);
 			}
 
 

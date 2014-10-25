@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ClearScene\AgainButton.cs" />
+     <Compile Include="Assets\Scripts\ClearScene\ClearButton.cs" />
      <Compile Include="Assets\Scripts\DC1_NotDrink\DC1_comabehaviour.cs" />
      <Compile Include="Assets\Scripts\DC1_NotDrink\DC1_spriteChange.cs" />
      <Compile Include="Assets\Scripts\NotDrinkAdd.cs" />

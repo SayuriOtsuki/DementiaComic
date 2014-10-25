@@ -4,6 +4,7 @@ using System.Collections;
 public class DC1_comabehaviour : MonoBehaviour {
 	public float moveSpeed = 0.08f;
 	public GameObject comaFirst;
+	GameObject comaInta;
 
 	public float comaDif = 7.0f;
 
@@ -16,6 +17,9 @@ public class DC1_comabehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		comaInta = GameObject.Find ("4komaTest_66_3");
+		dc1SC = comaInta.GetComponent<DC1_spriteChange> ();
+
 		comaFirstX = comaFirst.transform.position.x;
 		comaFirstY = comaFirst.transform.position.y;
 		comaFirstZ = comaFirst.transform.position.z;
@@ -39,32 +43,30 @@ public class DC1_comabehaviour : MonoBehaviour {
 
 			if(comaFirst.transform.position.y < 5.3f){
 				comaMove = comaDif*0 + comaFirstY;
-				Debug.Log("coma1=" + comaMove);
 				comaFirst.transform.position = new Vector3(comaFirstX, comaFirstY, comaFirstZ);
 			}
 
 			if(comaFirst.transform.position.y >= 5.3f && comaFirst.transform.position.y  < 11.3f){
 				comaMove = comaDif*1 + comaFirstY;
-				Debug.Log("coma2=" + comaMove);
 				comaFirst.transform.position = new Vector3(comaFirstX, comaMove, comaFirstZ);
 			}
 
 			if(comaFirst.transform.position.y >= 11.3f && comaFirst.transform.position.y < 19.8f){
 				comaMove = comaDif*2 + comaFirstY;
 				Debug.Log("coma3=" + comaMove);
+				dc1SC.SpriteChange();
 				comaFirst.transform.position = new Vector3(comaFirstX, comaMove, comaFirstZ);
 			}
 
 			if(comaFirst.transform.position.y >= 19.8f){
 				comaMove = comaDif*3 + comaFirstY;
-				Debug.Log( "coma4=" +comaMove);
 				comaFirst.transform.position = new Vector3(comaFirstX, comaMove, comaFirstZ);
 			}
 
 
 		}
 
-		if (Input.touchCount == 1) {
+		/*if (Input.touchCount == 1) {
 			Vector2 tapPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			Collider2D collition2d  = Physics2D.OverlapPoint(tapPoint);
 			
@@ -79,6 +81,6 @@ public class DC1_comabehaviour : MonoBehaviour {
 					}
 				}
 			}
-		}
+		}*/
 	}
 }

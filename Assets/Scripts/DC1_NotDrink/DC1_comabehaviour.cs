@@ -4,12 +4,13 @@ using System.Collections;
 public class DC1_comabehaviour : MonoBehaviour {
 	public float moveSpeed = 0.08f;
 	public GameObject comaFirst;
+	public GameObject bunkiMaru;
 	public float comaDif = 7.0f;
 	public Sprite coma3Sprite;
 	private SpriteRenderer spriteRenderer;
 
 	int comaNum = 2;
-	float comaMove;
+	float comaPos;
 	float comaFirstX;
 	float comaFirstY;
 	float comaFirstZ;
@@ -25,6 +26,7 @@ public class DC1_comabehaviour : MonoBehaviour {
 
 		dc1SC = comaInta.GetComponent<DC1_spriteChange> ();
 
+		//bunkiMaru
 		comaFirstX = comaFirst.transform.position.x;
 		comaFirstY = comaFirst.transform.position.y;
 		comaFirstZ = comaFirst.transform.position.z;
@@ -65,8 +67,8 @@ public class DC1_comabehaviour : MonoBehaviour {
 				if(spriteRenderer.sprite != coma3Sprite){
 					spriteRenderer.sprite = Resources.Load<Sprite>("1_NotDrink/DC1_03");
 				}
-				comaMove = comaDif*0 + comaFirstY;
-				comaFirst.transform.position = new Vector3(comaFirstX, comaMove, comaFirstZ);	
+				comaPos = comaDif*0 + comaFirstY;
+				comaFirst.transform.position = new Vector3(comaFirstX, comaPos, comaFirstZ);	
 			}
 
 			if(comaFirst.transform.position.y >= 5.0f && comaFirst.transform.position.y  < 11.3f){
@@ -74,18 +76,18 @@ public class DC1_comabehaviour : MonoBehaviour {
 				if(spriteRenderer.sprite != coma3Sprite){
 					spriteRenderer.sprite = Resources.Load<Sprite>("1_NotDrink/DC1_03");
 				}
-				comaMove = comaDif*1 + comaFirstY;
-				comaFirst.transform.position = new Vector3(comaFirstX, comaMove, comaFirstZ);
+				comaPos = comaDif*1 + comaFirstY;
+				comaFirst.transform.position = new Vector3(comaFirstX, comaPos, comaFirstZ);
 			}
 
 			if(comaFirst.transform.position.y >= 11.3f && comaFirst.transform.position.y < 19.8f){
-				comaMove = comaDif*2 + comaFirstY;
-				comaFirst.transform.position = new Vector3(comaFirstX, comaMove, comaFirstZ);
+				comaPos = comaDif*2 + comaFirstY;
+				comaFirst.transform.position = new Vector3(comaFirstX, comaPos, comaFirstZ);
 			}
 
 			if(comaFirst.transform.position.y >= 19.8f){
-				comaMove = comaDif*3 + comaFirstY;
-				comaFirst.transform.position = new Vector3(comaFirstX, comaMove, comaFirstZ);
+				comaPos = comaDif*3 + comaFirstY;
+				comaFirst.transform.position = new Vector3(comaFirstX, comaPos, comaFirstZ);
 			}
 
 

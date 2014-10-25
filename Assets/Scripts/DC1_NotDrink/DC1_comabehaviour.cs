@@ -4,15 +4,15 @@ using System.Collections;
 public class DC1_comabehaviour : MonoBehaviour {
 	public float moveSpeed = 0.08f;
 	public GameObject comaFirst;
-	GameObject comaInta;
-
 	public float comaDif = 7.0f;
 
+	int comaNum = 2;
 	float comaMove;
 	float comaFirstX;
 	float comaFirstY;
 	float comaFirstZ;
 
+	GameObject comaInta;
 	DC1_spriteChange dc1SC;
 
 	// Use this for initialization
@@ -43,7 +43,7 @@ public class DC1_comabehaviour : MonoBehaviour {
 
 			if(comaFirst.transform.position.y < 5.3f){
 				comaMove = comaDif*0 + comaFirstY;
-				comaFirst.transform.position = new Vector3(comaFirstX, comaFirstY, comaFirstZ);
+				comaFirst.transform.position = new Vector3(comaFirstX, comaMove, comaFirstZ);
 			}
 
 			if(comaFirst.transform.position.y >= 5.3f && comaFirst.transform.position.y  < 11.3f){
@@ -53,8 +53,6 @@ public class DC1_comabehaviour : MonoBehaviour {
 
 			if(comaFirst.transform.position.y >= 11.3f && comaFirst.transform.position.y < 19.8f){
 				comaMove = comaDif*2 + comaFirstY;
-				Debug.Log("coma3=" + comaMove);
-				dc1SC.SpriteChange();
 				comaFirst.transform.position = new Vector3(comaFirstX, comaMove, comaFirstZ);
 			}
 
@@ -66,21 +64,25 @@ public class DC1_comabehaviour : MonoBehaviour {
 
 		}
 
-		/*if (Input.touchCount == 1) {
-			Vector2 tapPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Collider2D collition2d  = Physics2D.OverlapPoint(tapPoint);
-			
-			if (collition2d) {
-				RaycastHit2D hitObject = Physics2D.Raycast(tapPoint,-Vector2.up);
+		if(comaFirst.transform.position.y == 14){
+
+			if (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Ended) {
+
+				Vector2 tapPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				Collider2D collition2d  = Physics2D.OverlapPoint(tapPoint);
 				
-				if (hitObject) {
-					Debug.Log("hit object is " + hitObject.collider.gameObject.name);
-					if(hitObject.collider.gameObject.name == "4komaTest_66_3"){
-						Debug.Log ("Hit");
-						dc1SC.SpriteChange();
+				if (collition2d) {
+					RaycastHit2D hitObject = Physics2D.Raycast(tapPoint,-Vector2.up);
+					
+					if (hitObject) {
+						if(hitObject.collider.gameObject.name == "4komaTest_66_3"){
+							comaNum++;
+							dc1SC.SpriteChangePre(comaNum);
+						}
 					}
 				}
+
 			}
-		}*/
+		}
 	}
 }

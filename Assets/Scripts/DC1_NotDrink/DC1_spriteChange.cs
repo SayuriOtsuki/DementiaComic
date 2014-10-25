@@ -7,37 +7,41 @@ public class DC1_spriteChange : MonoBehaviour {
 	private SpriteRenderer spriteRenderer; 
 	public Sprite testSprite;
 
+
 	// Use this for initialization
 	void Start () {
 	
 		spriteRenderer = GetComponent<SpriteRenderer>();
+
+		if (spriteRenderer.sprite == null) {
+			SpriteOne();
+		}
+
 	}
 	/*void Update () {
-		if (Input.touchCount == 1) {
-			Vector2 tapPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Collider2D collition2d  = Physics2D.OverlapPoint(tapPoint);
-			
-			if (collition2d) {
-				RaycastHit2D hitObject = Physics2D.Raycast(tapPoint,-Vector2.up);
-				
-				if (hitObject) {
-					Debug.Log("hit object is " + hitObject.collider.gameObject.name);
-					if(hitObject.collider.gameObject.name == "4komaTest_66_3"){
-						spriteRenderer.sprite = Resources.Load<Sprite>("1_NotDrink/DC1_04");
-						//spriteRenderer.sprite = testSprite;
-						//Debug.Log("spriteRenderer is" + spriteRenderer.sprite.name);
-					}
-				}
-			}
-		}
-	}*/
 
-	// Update is called once per frame
-	public void SpriteChange() {
+	}*/
+	
+	public void SpriteChangePre(int comaNum) {
+		int maxComa = 8;
+		Debug.Log ("SpriteChange Pre! comaNum= "+ comaNum);
+
+		if(comaNum <= maxComa){
+			SpriteChange(comaNum.ToString());
+		}
+	}
+
+	void SpriteChange(string comaNum){
 		Debug.Log ("SpriteChange");
-						//spriteRenderer.sprite = Resources.Load<Sprite>("1_NotDrink/DC1_04");
-						//spriteRenderer.sprite = testSprite;
-						//Debug.Log("spriteRenderer is" + spriteRenderer.sprite.name);
+		spriteRenderer.sprite = Resources.Load<Sprite>("1_NotDrink/DC1_0"+ comaNum);
+		//spriteRenderer.sprite = testSprite;
+		//Debug.Log("spriteRenderer is" + spriteRenderer.sprite.name);
 
 	}
+
+	void SpriteOne(){
+		spriteRenderer.sprite = Resources.Load<Sprite>("1_NotDrink/DC1_03");
+	}
+	
+	
 }

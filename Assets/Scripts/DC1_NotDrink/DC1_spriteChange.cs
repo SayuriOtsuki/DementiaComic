@@ -24,7 +24,6 @@ public class DC1_spriteChange : MonoBehaviour {
 	
 	public void SpriteChangePre(int comaNum) {
 		int maxComa = 8;
-		Debug.Log ("SpriteChange Pre! comaNum= "+ comaNum);
 
 		if(comaNum <= maxComa){
 			SpriteChange(comaNum.ToString());
@@ -32,7 +31,6 @@ public class DC1_spriteChange : MonoBehaviour {
 	}
 
 	void SpriteChange(string comaNum){
-		Debug.Log ("SpriteChange");
 		spriteRenderer.sprite = Resources.Load<Sprite>("1_NotDrink/DC1_0"+ comaNum);
 		//spriteRenderer.sprite = testSprite;
 		//Debug.Log("spriteRenderer is" + spriteRenderer.sprite.name);

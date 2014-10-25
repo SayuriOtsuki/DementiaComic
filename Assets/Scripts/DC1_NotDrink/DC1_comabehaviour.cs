@@ -27,8 +27,8 @@ public class DC1_comabehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.touchCount  ==1 && Input.GetTouch (0).phase == TouchPhase.Moved) {
-			
+		/*if (Input.touchCount  ==1 && Input.GetTouch (0).phase == TouchPhase.Moved) {
+
 			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 			transform.Translate(0, touchDeltaPosition.y * moveSpeed, 0);
 			
@@ -37,6 +37,30 @@ public class DC1_comabehaviour : MonoBehaviour {
 			transform.position = new Vector3 (0, limit_valueY, transform.position.z);
 			
 			
+		}*/
+
+		if(Input.touchCount  ==1 && Input.GetTouch (0).phase == TouchPhase.Moved){
+
+			if(comaFirst.transform.position.y == 14){
+				if(comaNum >= 8){
+					Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+					transform.Translate(0, touchDeltaPosition.y * moveSpeed, 0);
+					
+					float limit_valueY = Mathf.Clamp (transform.position.y,  0.0f, 21.5f);
+					//float limit_valueX = Mathf.Clamp (transform.position.x, -2.7f, 3.0f);
+					transform.position = new Vector3 (0, limit_valueY, transform.position.z);
+				}
+			}
+			else{
+				Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+				transform.Translate(0, touchDeltaPosition.y * moveSpeed, 0);
+				
+				float limit_valueY = Mathf.Clamp (transform.position.y,  0.0f, 21.5f);
+				//float limit_valueX = Mathf.Clamp (transform.position.x, -2.7f, 3.0f);
+				transform.position = new Vector3 (0, limit_valueY, transform.position.z);
+
+			}
+
 		}
 
 		if(Input.touchCount  ==1 && Input.GetTouch (0).phase == TouchPhase.Ended){

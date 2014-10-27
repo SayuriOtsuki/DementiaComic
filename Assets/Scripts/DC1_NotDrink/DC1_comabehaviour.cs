@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DC1_comabehaviour : MonoBehaviour {
+public class DC1_comaBehaviour : MonoBehaviour {
 	public float moveSpeed = 0.08f;
 	public GameObject comaFirst;
 	public float comaDif = 7.0f;

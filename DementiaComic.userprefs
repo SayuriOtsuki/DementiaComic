@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DC1_NotDrink/DC1_comabehaviour.cs">
     <Files>
-      <File FileName="Assets/Scripts/DC1_NotDrink/DC1_spriteChange.cs" Line="17" Column="16" />
-      <File FileName="Assets/Scripts/DC1_NotDrink/DC1_comabehaviour.cs" Line="136" Column="2" />
-      <File FileName="Assets/Scripts/SelectTouch.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ClearScene/AgainButton.cs" Line="13" Column="28" />
-      <File FileName="Assets/Scripts/ClearScene/ClearButton.cs" Line="9" Column="33" />
+      <File FileName="Assets/Scripts/DC1_NotDrink/DC1_comaBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DC1_NotDrink/DC1_spriteChange.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DC1_NotDrink/DC1_comabehaviour.cs" Line="4" Column="23" />
+      <File FileName="Assets/Scripts/ClearScene/AgainButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ClearScene/ClearButton.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

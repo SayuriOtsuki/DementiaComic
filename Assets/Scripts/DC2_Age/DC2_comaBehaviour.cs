@@ -106,9 +106,7 @@ public class DC2_comaBehaviour : MonoBehaviour {
 			
 		}
 		
-		//coma3に来たときだけオブジェクトを検出・sprite変更
-		/*if(comaFirst.transform.position.y == 14){
-			
+
 			if (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Ended) {
 				
 				Vector2 tapPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -118,14 +116,15 @@ public class DC2_comaBehaviour : MonoBehaviour {
 					RaycastHit2D hitObject = Physics2D.Raycast(tapPoint,-Vector2.up);
 					
 					if (hitObject) {
-						if(hitObject.collider.gameObject.name == "4komaTest_66_3"){
+						 /*if(hitObject.collider.gameObject.name == "4komaTest_66_3"){
 							comaNum++;
 							dc1SC.SpriteChangePre(comaNum);
-						}
+						}*/
+					Debug.Log ("Hit Object is "+ hitObject.collider.gameObject.name);
 					}
 				}
 				
 			}
-		}*/
+
 	}
 }

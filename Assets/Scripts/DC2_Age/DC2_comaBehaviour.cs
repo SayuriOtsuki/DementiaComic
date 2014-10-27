@@ -9,6 +9,9 @@ public class DC2_comaBehaviour : MonoBehaviour {
 
 	private SpriteRenderer coma3SR;
 	private SpriteRenderer coma4SR;
+
+	private SpriteRenderer age80SR;
+	private SpriteRenderer age90SR;
 	
 	//public Sprite coma3Sprite;
 	//private SpriteRenderer spriteRenderer;
@@ -38,6 +41,9 @@ public class DC2_comaBehaviour : MonoBehaviour {
 		bunkiMaru = GameObject.Find ("4koma_bMaru");
 		age80Sprite = GameObject.Find ("DC2_age_80_");
 		age90Sprite = GameObject.Find ("DC2_age_90_");
+
+		age80SR = age80Sprite.GetComponent<SpriteRenderer> ();
+		age90SR = age90Sprite.GetComponent<SpriteRenderer> ();
 
 		coma3 = GameObject.Find ("DC2_03");
 		coma4 = GameObject.Find ("DC2_04");
@@ -145,7 +151,11 @@ public class DC2_comaBehaviour : MonoBehaviour {
 	
 	void Age80(){
 		age80Sprite.transform.localScale = new Vector3(3,3,3);
+		age80SR.sprite = Resources.Load<Sprite>("2_Age/DC2_age80On");
+
 		age90Sprite.transform.localScale = new Vector3(2,2,2);
+		age90SR.sprite = Resources.Load<Sprite>("2_Age/DC2_age90");
+
 		coma3SR.sprite = Resources.Load<Sprite>("2_Age/DC2_80-03");
 		coma4SR.sprite = Resources.Load<Sprite>("2_Age/DC2_80-04");
 	}
@@ -153,7 +163,11 @@ public class DC2_comaBehaviour : MonoBehaviour {
 	
 	void Age90(){
 		age80Sprite.transform.localScale = new Vector3(2,2,2);
+		age80SR.sprite = Resources.Load<Sprite>("2_Age/DC2_age80");
+
 		age90Sprite.transform.localScale = new Vector3(3,3,3);
+		age90SR.sprite = Resources.Load<Sprite>("2_Age/DC2_age90On");
+
 		coma3SR.sprite = Resources.Load<Sprite>("2_Age/DC2_90-03");
 		coma4SR.sprite = Resources.Load<Sprite>("2_Age/DC2_90-04");
 	}

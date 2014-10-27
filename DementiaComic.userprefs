@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DC2_Age/DC2_comaBehaviour.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DC1_NotDrink/DC1_comabehaviour.cs">
     <Files>
-      <File FileName="Assets/Scripts/DC1_NotDrink/DC1_comabehaviour.cs" Line="142" Column="5" />
-      <File FileName="Assets/Scripts/DC2_Age/DC2_comaBehaviour.cs" Line="123" Column="69" />
-      <File FileName="Assets/Scripts/ClearScene/AgainButton.cs" Line="18" Column="49" />
+      <File FileName="Assets/Scripts/DC2_Age/DC2_comaBehaviour.cs" Line="158" Column="1" />
+      <File FileName="Assets/Scripts/DC1_NotDrink/DC1_comabehaviour.cs" Line="112" Column="48" />
+      <File FileName="Assets/Scripts/DC2_Age/DC2_comaBehaviour.cs" Line="126" Column="6" />
+      <File FileName="Assets/Scripts/ClearScene/AgainButton.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

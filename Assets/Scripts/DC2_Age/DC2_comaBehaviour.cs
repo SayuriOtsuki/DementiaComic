@@ -107,24 +107,51 @@ public class DC2_comaBehaviour : MonoBehaviour {
 		}
 		
 
-			if (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Ended) {
+			/*if (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Ended) {
 				
 				Vector2 tapPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 				Collider2D collition2d  = Physics2D.OverlapPoint(tapPoint);
 				
 				if (collition2d) {
 					RaycastHit2D hitObject = Physics2D.Raycast(tapPoint,-Vector2.up);
-					
-					if (hitObject) {
-						 /*if(hitObject.collider.gameObject.name == "4komaTest_66_3"){
-							comaNum++;
-							dc1SC.SpriteChangePre(comaNum);
-						}*/
 					Debug.Log ("Hit Object is "+ hitObject.collider.gameObject.name);
-					}
+				 	
+					//if (hitObject) {
+						 //if(hitObject.collider.gameObject.name == "4komaTest_66_3"){
+							//comaNum++;
+							//dc1SC.SpriteChangePre(comaNum);
+						//}
+
+					//}
 				}
 				
+			}*/
+
+		/*if (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Ended) {
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit = new RaycastHit();
+			
+			if (Physics.Raycast(ray, out hit)) {
+				               
+				Debug.Log("Hit Object is "+ hit.collider.gameObject.name);
 			}
+		}*/
+
+
+		if (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Ended) {
+            Vector3 screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+            Vector3 newVector = Camera.main.ScreenToWorldPoint( new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+ 
+            Vector2 tapPoint = new Vector2(newVector.x, newVector.y);
+            Collider2D colition2d = Physics2D.OverlapPoint(tapPoint);
+ 
+            if(colition2d) {
+                RaycastHit2D hitObject = Physics2D.Raycast(tapPoint, -Vector2.up);
+                if(hitObject){
+                    Debug.Log("hit object is " + hitObject.collider.gameObject.name);
+                }
+            }
+        }
 
 	}
 }

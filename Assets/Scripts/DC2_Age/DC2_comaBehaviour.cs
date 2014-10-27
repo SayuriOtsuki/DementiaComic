@@ -6,6 +6,9 @@ public class DC2_comaBehaviour : MonoBehaviour {
 	public GameObject comaFirst;
 	public float comaDif = 7.0f;
 	public float bunkiDif = 1.55f;
+
+	GameObject age90Sprite;
+	GameObject age80Sprite;
 	//public Sprite coma3Sprite;
 	//private SpriteRenderer spriteRenderer;
 	
@@ -31,6 +34,7 @@ public class DC2_comaBehaviour : MonoBehaviour {
 		//spriteRenderer = comaInta.GetComponent<SpriteRenderer>();
 		
 		bunkiMaru = GameObject.Find ("4koma_bMaru");
+
 		
 		//dc1SC = comaInta.GetComponent<DC1_spriteChange> ();
 		
@@ -107,35 +111,8 @@ public class DC2_comaBehaviour : MonoBehaviour {
 		}
 		
 
-			/*if (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Ended) {
-				
-				Vector2 tapPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-				Collider2D collition2d  = Physics2D.OverlapPoint(tapPoint);
-				
-				if (collition2d) {
-					RaycastHit2D hitObject = Physics2D.Raycast(tapPoint,-Vector2.up);
-					Debug.Log ("Hit Object is "+ hitObject.collider.gameObject.name);
-				 	
-					//if (hitObject) {
-						 //if(hitObject.collider.gameObject.name == "4komaTest_66_3"){
-							//comaNum++;
-							//dc1SC.SpriteChangePre(comaNum);
-						//}
 
-					//}
-				}
-				
-			}*/
 
-		/*if (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Ended) {
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			RaycastHit hit = new RaycastHit();
-			
-			if (Physics.Raycast(ray, out hit)) {
-				               
-				Debug.Log("Hit Object is "+ hit.collider.gameObject.name);
-			}
-		}*/
 
 
 		if (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Ended) {
@@ -147,9 +124,17 @@ public class DC2_comaBehaviour : MonoBehaviour {
  
             if(colition2d) {
                 RaycastHit2D hitObject = Physics2D.Raycast(tapPoint, -Vector2.up);
-                if(hitObject){
-                    Debug.Log("hit object is " + hitObject.collider.gameObject.name);
-                }
+				if(hitObject){
+
+					if(hitObject.collider.gameObject.name == "DC2_age_90_"){
+						hitObject.collider.gameObject.transform.localScale = new Vector3(5,5,5);
+					}
+
+					if(hitObject.collider.gameObject.name == "DC2_age_80_"){
+						hitObject.collider.gameObject.transform.localScale = new Vector3(5,5,5);
+					}
+
+				}
             }
         }
 

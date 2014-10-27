@@ -15,12 +15,23 @@ public class AgainButton : MonoBehaviour {
 			NotDrinkAgain();
 		}
 
+		if (GUI.Button(new Rect(70, 400, 300, 50), "2_Age"))
+		{
+			AgeAgain();
+		}
+
 	}
 	
 	// Update is called once per frame
 	void NotDrinkAgain () {
 
-			Application.LoadLevel("1_NotDrink3");
+			Application.LoadLevel("DC1_NotDrink");
 
+	}
+
+	void AgeAgain () {
+		
+			Application.LoadLevel("DC2_Age");
+		
 	}
 }

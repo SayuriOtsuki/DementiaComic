@@ -7,6 +7,8 @@ public class DC2_comaBehaviour : MonoBehaviour {
 	public float comaDif = 7.0f;
 	public float bunkiDif = 1.55f;
 
+
+
 	private SpriteRenderer coma3SR;
 	private SpriteRenderer coma4SR;
 
@@ -122,33 +124,36 @@ public class DC2_comaBehaviour : MonoBehaviour {
 
 
 		if(comaFirst.transform.position.y == 7.0f){
-			if (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Ended) {
-	            Vector3 screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-	            Vector3 newVector = Camera.main.ScreenToWorldPoint( new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-	 
-	            Vector2 tapPoint = new Vector2(newVector.x, newVector.y);
-	            Collider2D colition2d = Physics2D.OverlapPoint(tapPoint);
-	 
-	            if(colition2d) {
-	                RaycastHit2D hitObject = Physics2D.Raycast(tapPoint, -Vector2.up);
-					if(hitObject){
-
-						if(hitObject.collider.gameObject.name == "DC2_age_80_"){
-							Age80();
-						}
-
-						
-						if(hitObject.collider.gameObject.name == "DC2_age_90_"){
-							Age90();
-						}
-
-					}
-	            }
-	        }
+			SpriteChabge();
 		}
 
 	}
-	
+	void SpriteChabge(){
+		if (Input.touchCount == 1 && Input.GetTouch (0).phase == TouchPhase.Ended) {
+			Vector3 screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+			Vector3 newVector = Camera.main.ScreenToWorldPoint( new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+			
+			Vector2 tapPoint = new Vector2(newVector.x, newVector.y);
+			Collider2D colition2d = Physics2D.OverlapPoint(tapPoint);
+			
+			if(colition2d) {
+				RaycastHit2D hitObject = Physics2D.Raycast(tapPoint, -Vector2.up);
+				if(hitObject){
+					
+					if(hitObject.collider.gameObject.name == "DC2_age_80_"){
+						Age80();
+					}
+					
+					
+					if(hitObject.collider.gameObject.name == "DC2_age_90_"){
+						Age90();
+					}
+					
+				}
+			}
+		}
+	}
+
 	void Age80(){
 		age80Sprite.transform.localScale = new Vector3(3,3,3);
 		age80SR.sprite = Resources.Load<Sprite>("2_Age/DC2_age80On");

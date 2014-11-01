@@ -51,6 +51,8 @@
      <Compile Include="Assets\Scripts\DC1_NotDrink\DC1_comaBehaviour.cs" />
      <Compile Include="Assets\Scripts\DC1_NotDrink\DC1_spriteChange.cs" />
      <Compile Include="Assets\Scripts\DC2_Age\DC2_comaBehaviour.cs" />
+     <Compile Include="Assets\Scripts\DC3_Typhoon\DC3_Typhoon.cs" />
+     <Compile Include="Assets\Scripts\Test\ComaMove.cs" />
      <Compile Include="Assets\Scripts\Test\NotDrinkAdd.cs" />
      <Compile Include="Assets\Scripts\Test\NotDrinkAdd2.cs" />
      <Compile Include="Assets\Scripts\Test\SelectTouch.cs" />

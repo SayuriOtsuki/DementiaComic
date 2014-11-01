@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Clear.unity
   - enabled: 1
     path: Assets/Scenes/DC2_Age.unity
+  - enabled: 1
+    path: Assets/Scenes/DC3_Typhoon.unity

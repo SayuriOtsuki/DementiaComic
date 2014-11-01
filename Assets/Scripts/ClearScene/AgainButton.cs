@@ -15,9 +15,14 @@ public class AgainButton : MonoBehaviour {
 			NotDrinkAgain();
 		}
 
-		if (GUI.Button(new Rect(70, 400, 300, 50), "2_Age"))
+		if (GUI.Button(new Rect(70, 300, 300, 50), "2_Age"))
 		{
 			AgeAgain();
+		}
+
+		if (GUI.Button(new Rect(70, 400, 300, 50), " 3_Typhoon"))
+		{
+			TyphoonAgain();
 		}
 
 	}
@@ -32,6 +37,12 @@ public class AgainButton : MonoBehaviour {
 	void AgeAgain () {
 		
 			Application.LoadLevel("DC2_Age");
+		
+	}
+
+	void TyphoonAgain () {
+		
+		Application.LoadLevel("DC3_Typhoon");
 		
 	}
 }
